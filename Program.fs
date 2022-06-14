@@ -1,4 +1,4 @@
-﻿let code = """
+let code = """
 try
     8 / 0 |> ignore
 with e -> 
@@ -14,7 +14,7 @@ let eval(codeStr) =
     let inn = new StringReader("")
     let out = Console.Out
     let config = FsiEvaluationSession.GetDefaultConfiguration()
-    let noArgs = [| "the first arg is neded, but ignored"|]
+    let noArgs = [| "the first arg is needed, but ignored";  "--multiemit" |]
     let session = FsiEvaluationSession.Create(config, noArgs, inn, out, out)
     session.EvalInteraction(codeStr)
 
